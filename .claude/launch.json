@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rent-management-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "../rent-management-app/react-app"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "anken-react",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "../anken-react"
+      ],
+      "port": 3001
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json.schemastore.org/none",
+  "meta": {
+    "description": "自社アプリ共通のデザイントークン。この値が唯一の正 (source of truth) です。値を変えたい時はここだけを編集し、各アプリの同期スクリプトを実行してください。",
+    "source": "買取案件管理 (anken) の :root で使われていた値を基準に、2026-09-15 に切り出しました。買取/仲介の案件種別バッジ色は、2026-09-19頃のanken-react再設計時にCaseBadges.tsxで再度必要になったため、この時点で共有トークンへ昇格。2026-09-21、「Appleの美しさ×Googleの業務効率」の方針のもとセクション単位の余白(sp64/80/96)とeasingカーブを追加。",
+    "consumers": ["買取案件管理(anken, PHP版・停止予定)", "anken-react(買取・仲介案件管理v2)", "rent-management-app(賃貸管理アプリ)"],
+    "version": 2,
+    "updatedAt": "2026-09-21"
+  },
+  "colors": {
+    "nv":    { "value": "#1a2744", "note": "ネイビー・プライマリ／ブランドカラー" },
+    "ac":    { "value": "#e8622a", "note": "オレンジ・アクセント／強調" },
+    "bl":    { "value": "#2a6fe8", "note": "ブルー・セカンダリ" },
+    "s2":    { "value": "#f5f5f5", "note": "サーフェス(薄いグレー背景)" },
+    "bd":    { "value": "#e0e0e0", "note": "ボーダー" },
+    "tx":    { "value": "#1a1a1a", "note": "本文テキスト" },
+    "mx":    { "value": "#666", "note": "ミュートテキスト" },
+    "wh":    { "value": "#fff", "note": "白" },
+    "bg":    { "value": "#f0f1f3", "note": "ページ背景" },
+    "sc":    { "value": "#54821d", "note": "成功(緑)。元々#639922だったが、白背景でのコントラスト比が3.44:1でWCAG本文基準(4.5:1)未達だったため2026-09-20に濃く調整(4.58:1)。色相・彩度は維持" },
+    "dg":    { "value": "#A32D2D", "note": "危険(赤)" },
+    "dgbg":  { "value": "#FCEBEB", "note": "危険の薄い背景" },
+    "wn":    { "value": "#633806", "note": "警告(文字色)" },
+    "wnbg":  { "value": "#FAEEDA", "note": "警告の薄い背景" },
+    "ib":    { "value": "#E6F1FB", "note": "情報の薄い背景" },
+    "it":    { "value": "#0C447C", "note": "情報(文字色)" },
+    "kaitoribg": { "value": "#FDE7DA", "note": "案件種別バッジ「買取」の背景(anken-react CaseBadges.tsx由来)" },
+    "kaitorifg": { "value": "#8A3A10", "note": "案件種別バッジ「買取」の文字色" },
+    "cbg":       { "value": "#ebe7f8", "note": "案件種別バッジ「仲介」の背景。紫寄りの青。元々#E4EDFBだったが情報バッジ(ib)と色相差8°・文字色完全一致で見分けにくかったため2026-09-20に変更" },
+    "cfg":       { "value": "#3b257e", "note": "案件種別バッジ「仲介」の文字色。元々#0C447C(itと同値)だったため変更。情報バッジとは別トークン" }
+  },
+  "shadowTints": {
+    "note": "box-shadow等の半透明レイヤー用。Tailwind側は基本 colors の /opacity 記法で代替できるので理論上は不要だが、anken用に値を保持",
+    "wa9":   "rgba(255,255,255,.9)",
+    "wa85":  "rgba(255,255,255,.85)",
+    "wa75":  "rgba(255,255,255,.75)",
+    "wa4":   "rgba(255,255,255,.4)",
+    "wa3":   "rgba(255,255,255,.3)",
+    "wa12":  "rgba(255,255,255,.12)",
+    "wa08":  "rgba(255,255,255,.08)",
+    "ba4":   "rgba(0,0,0,.4)",
+    "ba12":  "rgba(0,0,0,.12)",
+    "nva16": "rgba(26,39,68,.16)",
+    "nva10": "rgba(26,39,68,.1)",
+    "nva04": "rgba(26,39,68,.04)"
+  },
+  "radius": {
+    "r4": "4px", "r6": "6px", "r8": "8px", "r9": "9px",
+    "r10": "10px", "r12": "12px", "r14": "14px", "r20": "20px"
+  },
+  "fontSize": {
+    "f10": "10px", "f11": "11px", "f12": "12px", "f12h": "12.5px",
+    "f13": "13px", "f14": "14px", "f15": "15px", "f16": "16px",
+    "f17": "17px", "f20": "20px", "f26": "26px"
+  },
+  "spacing": {
+    "note": "padding / margin / gap で使う間隔スケール。anken由来の非16進数の実測値グリッド。sp48まではコンポーネント内部(ボタン内padding・要素間gapなど)用、sp64以上はセクション・ページ単位の余白(呼吸感)用",
+    "spn12": "-12px", "spn4": "-4px",
+    "sp1": "1px", "sp2": "2px", "sp3": "3px", "sp4": "4px", "sp5": "5px",
+    "sp6": "6px", "sp7": "7px", "sp8": "8px", "sp9": "9px", "sp10": "10px",
+    "sp11": "11px", "sp12": "12px", "sp13": "13px", "sp14": "14px",
+    "sp16": "16px", "sp18": "18px", "sp20": "20px", "sp24": "24px",
+    "sp30": "30px", "sp32": "32px", "sp38": "38px", "sp44": "44px", "sp48": "48px",
+    "sp64": "64px", "sp80": "80px", "sp96": "96px"
+  },
+  "borderWidth": {
+    "bw0": "0.5px",
+    "bw15": "1.5px"
+  },
+  "duration": {
+    "dur1": ".12s",
+    "dur2": ".15s",
+    "dur3": ".2s"
+  },
+  "zIndex": {
+    "zmodal": "40",
+    "ztoast": "50"
+  },
+  "logo": {
+    "note": "常時表示ヘッダーのロゴ(識別マーク、UIUXルール.md §1)のサイズ。ロゴ画像の実寸比率は255×320px(縦長)なので、高さのみこの値を指定し幅はauto(w-auto)にして比率を保つこと。正方形(例: h-X w-X)に固定すると縦横比が崩れて歪む。",
+    "headerH": "24px"
+  },
+  "easing": {
+    "note": "transition-timing-function用。開閉には減速/加速、色や状態変化には標準を使い分ける",
+    "easestd": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "easedec": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "easeacc": "cubic-bezier(0.7, 0, 0.84, 0)"
+  }
+}
